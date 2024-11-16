@@ -1,5 +1,14 @@
 ### Curso na Udemy de Arquitetura de Microsserviços do 0 com ASP.NET, .NET 6 e C#
 
+### Ferramentas Instaladas
+- Visual Studio 2022
+- Git e o Git Bash
+- MySQL
+- MySQL Workbench
+- HeidiSQL
+- Postman
+- Docker
+
 ### WebService
 - É uma aplicação em que é interoperavel e que é hospedada e pode ser acessada através de protocolo HTTP
 
