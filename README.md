@@ -23,3 +23,10 @@
  - As aplicações são implementadas como um conjunto de pequenos serviços, cada um dos quais sendo executado como um processo indendepente e cada um dos quais se comunicando com os outros por meio de algum tipo de protocolo bem conhecido
    - Microserviços trazem vários benefícios e riscos que devem ser considerados
  - Microserviços são uma aplicação única composta por um conjunto de serviços menores
+ - Vantangens dos Microserviços
+    - Facil de compreender(dificil de compreender o todo)
+    - Muito facil de testar,implantar,gerenciar,versionar e escolar serviços unicos
+    - ciclo de mudanças desacoplado
+    - mais facil de escalar os times de desenvolvimento
+    - liberdade para experimentar novas linguages ou frameworks
+      
