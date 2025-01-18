@@ -31,5 +31,9 @@
     - liberdade para experimentar novas linguages ou frameworks
 
 ### Criando o Primeiro Microserviço
- - Apresentação da Seção 
+ - Apresentação da Seção
+
+### Migrations
+- dotnet ef migrations add AddProductDataTableOnDB
+- dotnet ef database update
       
