@@ -54,5 +54,20 @@ namespace GeekShopping.Web.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult> ProductDelete(int id)
+        {
+            var model = await _productService.FindProductById(id);
+            if (model != null) return View(model);
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProductDelete(ProductModel model)
+        {        
+            var response = await _productService.DeleteProductById(model.Id);
+            if (response) return RedirectToAction(nameof(Index));
+            return View(model);
+        }
     }
 }
