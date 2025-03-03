@@ -18,6 +18,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "GeekShopping.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5005"
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
