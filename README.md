@@ -36,4 +36,15 @@
 ### Migrations
 - dotnet ef migrations add AddProductDataTableOnDB
 - dotnet ef database update
+
+### Autenticação com Oauth2,OpenID,JWT,Duende e Identity Server
+- OAuth2
+  - OAuth2 é um protocolo aberto que permite autorização de forma  simples e padronizada entre aplicações web,mobile e aplicações desktop.
+  - Autorização
+  - OAuth2 utiliza um acess token e a aplicação cliente usa esse token para acessar uma API ou endpoints.
+  - OAuth2 determina também como os endpoints serão usados em diferentes tipos de aplicações
+- OpenID Connect
+  - OpenID Connect é simplesmente uma camada de identificação no topo do protocolo OAuth2
+  - Através do OpenID Connect uma aplicação pode receber um Identity Token além de um access token se for o caso
+  - O OpenID connect define como os diferentes tipos de aplicações cliente podem obter de forma segura um token do Identity Server
       
