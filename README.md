@@ -49,4 +49,10 @@
   - O OpenID connect define como os diferentes tipos de aplicações cliente podem obter de forma segura um token do Identity Server
 - Introdução ao Identity Server
   - Identity Server 5 - Duende Identity Server é uma implementação do OpenId Connect e Oauth 2 e é altamente otimizado para resolver problemas de segurança comuns em aplicações atuais, sejam elas mobile,nativas ou mesmo aplicações web.
+- Terminologias do Identity Server
+  - Client é um componente de software que requisita um token a um Identity Server, as vezes para autenticar um usuário ou para acessar um recurso.
+  - API Resource normalmente representam uma funcionalidade que um cliente precisa invocar - normalmente implementados através de Web APIs.
+  - Identity Resource (Claims) informações relacionadas a identidade do usuário. Ex: nome, email e etc.
+  - Identity Token - a resposta a um processo de autenticação
+  - Access Token possibilita o acesso do usuário a um API Resource.
       
