@@ -47,4 +47,6 @@
   - OpenID Connect é simplesmente uma camada de identificação no topo do protocolo OAuth2
   - Através do OpenID Connect uma aplicação pode receber um Identity Token além de um access token se for o caso
   - O OpenID connect define como os diferentes tipos de aplicações cliente podem obter de forma segura um token do Identity Server
+- Introdução ao Identity Server
+  - Identity Server 5 - Duende Identity Server é uma implementação do OpenId Connect e Oauth 2 e é altamente otimizado para resolver problemas de segurança comuns em aplicações atuais, sejam elas mobile,nativas ou mesmo aplicações web.
       
