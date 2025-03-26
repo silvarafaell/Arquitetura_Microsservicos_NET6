@@ -60,4 +60,31 @@
 - Migrations GeekShoppingIdentityServer
   - dotnet ef migrations add AddDefaultSecurityTablesOnDB
   - dotnet ef database update
+- Desafio:
+  - Identity Server e Validação JWT são conceitos diferentes, mas podem ser utilizados de maneiras complementares. Vou explicar ambos brevemente e como você pode usá-los em conjunto no contexto de uma aplicação React ou Angular.
+     - 1 Validação JWT (JSON Web Token): o JWT é um formato de token de segurança que pode ser usado para representar informações entre duas partes de forma segura. É 
+         frequentemente utilizado para autenticação e autorização em aplicações web e APIs. O JWT contém informações codificadas em formato JSON, assinadas digitalmente, e 
+         pode ser usado para validar a identidade do usuário;
+     - 2 Identity Server: o Identity Server é uma solução de código aberto para autenticação e autorização baseada em OAuth 2.0 e OpenID Connect. Ele é frequentemente usado 
+         como um provedor de identidade (IdP) para aplicações web e APIs. O Identity Server emite tokens JWT para representar as informações de autenticação do usuário, que 
+         podem ser validados por outras aplicações.
+     - Agora, em relação ao uso no contexto de uma aplicação React ou Angular:
+       - Validação JWT no React ou  Angular: Quando você tem um token JWT emitido pelo Identity Server (ou qualquer outro provedor de identidade), você pode usá-lo em uma 
+          aplicação React para autenticar o usuário e permitir que ele acesse recursos protegidos no servidor. O React, como uma aplicação frontend, pode armazenar o token 
+          no armazenamento local (por exemplo, localStorage ou sessionStorage) e enviá-lo no cabeçalho das requisições para autenticar as requisições ao servidor.
+       - Identity Server com React: Você pode ter uma aplicação React que interage com o Identity Server para realizar o fluxo de autenticação. O usuário pode ser 
+         redirecionado para o Identity Server para fazer login e, após a autenticação bem-sucedida, ele receberá um token JWT que será usado para autenticar as chamadas à 
+         API da sua aplicação React ou Angular.
+      - Aqui estão algumas etapas gerais de como isso pode ser implementado:
+        - 1 Desenvolva um servidor backend (por exemplo, ASP.NET Core) que inclua o Identity Server para autenticação e emissão de tokens JWT;
+        - 2 Desenvolva sua aplicação React ou Angular que interage com o servidor backend para autenticação;
+        - 3 Use uma biblioteca ou abordagem adequada para armazenar o token JWT no lado do cliente (React ou Angular) após o login;
+        - 4 Envie o token JWT no cabeçalho das solicitações para a API do servidor backend, para que ele possa verificar a autenticação em recursos protegidos.
+      - O Identity Server pode ser uma solução robusta se você precisar de um provedor de identidade completo e desejar delegar a lógica de autenticação e autorização para 
+         um serviço dedicado. Por outro lado, se você estiver trabalhando com um provedor de identidade externo ou simplesmente quiser uma validação básica do JWT, pode 
+         optar por implementar apenas a validação do token JWT no seu servidor backend sem o uso do Identity Server.
+      - Lembre-se de que a escolha entre essas abordagens dependerá dos requisitos específicos do seu projeto, da escala, da segurança e das políticas de autenticação que 
+       você deseja implementar.
+
+
       
