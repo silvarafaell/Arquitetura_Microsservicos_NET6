@@ -57,4 +57,7 @@
   - Access Token possibilita o acesso do usuário a um API Resource.
  - dotnet new --install Duende.IdentityServer.Templates
  - dotnet new isui
+- Migrations GeekShoppingIdentityServer
+  - dotnet ef migrations add AddDefaultSecurityTablesOnDB
+  - dotnet ef database update
       
