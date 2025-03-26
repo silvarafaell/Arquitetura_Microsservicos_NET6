@@ -8,10 +8,18 @@
 
 	<ItemGroup>
 		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="5.2.2" />
-		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0-preview.3.21201.13" />
-		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0-preview.3.21201.13" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0-preview.3.21201.13" />
-		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0-preview.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.36" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.36" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.36" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.36">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.36">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
