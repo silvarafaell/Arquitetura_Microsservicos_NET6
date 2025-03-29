@@ -1,5 +1,6 @@
 using Duende.IdentityServer.Services;
 using GeekShopping.IdentityServerr.Configuration;
+using GeekShopping.IdentityServerr.Initializer;
 using GeekShopping.IdentityServerr.Model;
 using GeekShopping.IdentityServerr.Model.Context;
 using Microsoft.AspNetCore.Identity;
@@ -28,12 +29,16 @@ var builderr = builder.Services.AddIdentityServer(options =>
                    .AddInMemoryClients(IdentityConfiguration.Clients)
                    .AddAspNetIdentity<ApplicationUser>();
 
+
 builderr.AddDeveloperSigningCredential();
 
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+var scope = app.Services.CreateScope();
+var service = scope.ServiceProvider.GetService<IDbInitializer>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -45,6 +50,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthorization();
+service.Initialize();
 
 app.MapControllerRoute(
     name: "default",
