@@ -19,7 +19,6 @@ namespace GeekShopping.ProductAPI.Migrations
                 .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
             modelBuilder.Entity("GeekShopping.ProductAPI.Model.Product", b =>
                 {
