@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.ProductAPI", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.IdentityServerr", "GeekShopping.IdentityServerr\GeekShopping.IdentityServerr.csproj", "{061BD9D2-FDDD-4828-B177-8250B8F30E2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.CardAPI", "GeekShopping.CardAPI\GeekShopping.CardAPI.csproj", "{12C1F40E-6E7B-470E-B0CC-304C32CFA007}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.CartAPI", "GeekShopping.CardAPI\GeekShopping.CartAPI.csproj", "{12C1F40E-6E7B-470E-B0CC-304C32CFA007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
