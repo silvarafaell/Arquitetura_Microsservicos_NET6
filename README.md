@@ -87,5 +87,6 @@
        você deseja implementar.
 
 ### Seção 13 - Implementando o Microserviço de carrinho de compras
-
+ - dotnet ef migrations add AddCartDataTablesOnDB
+ - dotnet ef database update
       
