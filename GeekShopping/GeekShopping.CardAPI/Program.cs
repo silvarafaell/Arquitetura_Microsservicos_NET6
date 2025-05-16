@@ -1,6 +1,6 @@
 using AutoMapper;
 using GeekShopping.CardAPI.Config;
-using GeekShopping.CardAPI.Model.Context;
+using GeekShopping.CartAPI.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
