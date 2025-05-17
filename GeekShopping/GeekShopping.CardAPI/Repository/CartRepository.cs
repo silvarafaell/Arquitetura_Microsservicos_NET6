@@ -29,7 +29,15 @@ namespace GeekShopping.CartAPI.Repository
 
         public async Task<CartVO> FindCartByUserId(string userId)
         {
-            throw new NotImplementedException();
+            Cart cart = new()
+            {
+                CartHeader = await _context.CartHeaders
+                     .FirstOrDefaultAsync(c => c.UserId == userId),
+            };
+            cart.CartDetails = _context.CartDetails
+                .Where(c => c.CartHeaderId == cart.CartHeader.Id)
+                    .Include(c => c.Product);
+            return _mapper.Map<CartVO>(cart);
         }
 
         public async Task<bool> RemoveCoupon(string userId)
@@ -57,13 +65,13 @@ namespace GeekShopping.CartAPI.Repository
 
             //Check if CartHeader is null
 
-            var cartHeader = await _context.CartHeders.AsNoTracking().FirstOrDefaultAsync(
+            var cartHeader = await _context.CartHeaders.AsNoTracking().FirstOrDefaultAsync(
                 c => c.UserId == cart.CartHeader.UserId);
 
             if (cartHeader == null)
             {
                 //Create CartHeader and CartDetails
-                _context.CartHeders.Add(cart.CartHeader);
+                _context.CartHeaders.Add(cart.CartHeader);
                 await _context.SaveChangesAsync();
                 cart.CartDetails.FirstOrDefault().CartHeaderId = cart.CartHeader.Id;
                 cart.CartDetails.FirstOrDefault().Product = null;
