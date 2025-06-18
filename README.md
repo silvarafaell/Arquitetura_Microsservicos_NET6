@@ -91,4 +91,10 @@
  - dotnet ef database update
 
 ### Seção 14 - Consumindo o Microserviço de Carrinho de Compras
+
+### Seção 16 - Implementando o Microserviço de Cupom de Desconto
+ - dotnet ef migrations add AddCouponDataTableOnDb
+ - dotnet ef database update
+ - dotnet ef migrations add SeedCouponDatabase
+ - dotnet ef database update
       
