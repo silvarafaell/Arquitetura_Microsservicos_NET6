@@ -18,7 +18,7 @@ builder.Services.AddHttpClient<ICartService, CartService>(c =>
 //});
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = "Cookies";
