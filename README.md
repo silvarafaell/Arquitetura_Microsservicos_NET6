@@ -97,4 +97,17 @@
  - dotnet ef database update
  - dotnet ef migrations add SeedCouponDatabase
  - dotnet ef database update
+
+### Seção 18 - Integrando a Tela de Checkout ao Microserviço GeekShopping.CartAPI
+- Async e Await x Comunicação Assíncrona
+  - Async e Await aguarda resposta é uma comunicação síncrona
+  - Comunicação Assíncrona não aguarda a resposta
+- Comunicação Síncrona x Assíncrona
+  - Comunicação Síncrona
+    - A comunicação síncrona nunca foi um problema em aplicações monolíticas relativamente pequenas porque é um conceito muito simples.
+    - O cliente envia uma request ao servidor e o servidor responde de volta ao cliente.
+  - Comunicação Assíncrona
+    - Ao usarmos comunicação assíncrona o serviço que faz a request não espera uma resposta do serviço requisitado
+    - A comunicação assíncrona também nos dá a possibilidade de implementarmos comunicação one-to-many, em que um client pode enviar uma mensagem para vários serviços ao mesmo tempo.
+    - Por exemplo usaremos o RabbitMQ
       
