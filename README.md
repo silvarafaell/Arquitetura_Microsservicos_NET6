@@ -110,4 +110,14 @@
     - Ao usarmos comunicação assíncrona o serviço que faz a request não espera uma resposta do serviço requisitado
     - A comunicação assíncrona também nos dá a possibilidade de implementarmos comunicação one-to-many, em que um client pode enviar uma mensagem para vários serviços ao mesmo tempo.
     - Por exemplo usaremos o RabbitMQ
+
+### Seção 19 - Integração dos Microservicos a RabbitMQ
+- Rapido Overview de RabbitMQ
+  - É um sistema de mensageria open source
+  - RabbitMQ implementa o protocolo AMQP
+  - RabbitMQ provê:
+    - Confiabilidade e solidez;
+    - Roteamento;
+    - Interface de usuário acessível via browser;
+    - Cross-platform.
       
