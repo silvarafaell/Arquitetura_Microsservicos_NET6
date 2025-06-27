@@ -39,7 +39,13 @@ namespace GeekShopping.CartAPI.RabbitMQSender
 
         private byte[] GetMessageAsByteArray(BaseMessage message)
         {
-           throw new NotImplementedException();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+            };
+            var json = JsonSerializer.Serialize<CheckoutHeaderVO>((CheckoutHeaderVO)message, options);
+            var body = Encoding.UTF8.GetBytes(json);
+            return body;
         }
     }
 }
