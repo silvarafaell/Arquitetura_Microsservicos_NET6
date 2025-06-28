@@ -12,8 +12,13 @@ var connection = builder.Configuration["MySqlConnection:MysqlConnectionString"];
 
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version(8, 0, 0))));
 
+var dbContextBuilder = new DbContextOptionsBuilder<MySQLContext>();
+dbContextBuilder.UseMySql(
+    connection,
+    new MySqlServerVersion(new Version(8, 0, 0))
+);
 
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddSingleton(new OrderRepository(dbContextBuilder.Options));
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 builder.Services.AddEndpointsApiExplorer();
 
