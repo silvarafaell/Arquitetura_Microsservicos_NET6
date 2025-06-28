@@ -1,12 +1,8 @@
 using GeekShopping.OrderAPI.Model.Context;
-using Microsoft.AspNetCore.Builder;
+using GeekShopping.OrderAPI.Repository;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +13,7 @@ var connection = builder.Configuration["MySqlConnection:MysqlConnectionString"];
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version(8, 0, 0))));
 
 
-//builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 builder.Services.AddEndpointsApiExplorer();
 
