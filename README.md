@@ -125,4 +125,8 @@
   - docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
   - localhost:15672
   - User: guest, Password: guest
+
+### Seção 20 - Criando o Microserviço de Pedido de compras
+- dotnet ef migrations add AddOrderDatablesOnDB
+- dotnet ef database update
       
