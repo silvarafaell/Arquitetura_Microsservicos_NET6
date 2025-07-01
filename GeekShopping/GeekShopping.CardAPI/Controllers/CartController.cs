@@ -13,13 +13,15 @@ namespace GeekShopping.CartAPI.Controllers
     {
         private ICartRepository _repository;
         private IRabbitMQMessageSender _rabbitMQMessageSender;
+        private ICouponRepository _couponRepository;
 
-        public CartController(ICartRepository repository, IRabbitMQMessageSender rabbitMQMessageSender)
+        public CartController(ICartRepository repository, IRabbitMQMessageSender rabbitMQMessageSender, ICouponRepository couponRepository)
         {
             _repository = repository ?? throw new
                 ArgumentNullException(nameof(repository));
             _rabbitMQMessageSender = rabbitMQMessageSender
                ?? throw new ArgumentNullException(nameof(rabbitMQMessageSender));
+            _couponRepository = couponRepository ?? throw new ArgumentNullException(nameof(couponRepository));
         }
 
         [HttpGet("find-cart/{id}")]
@@ -78,13 +80,24 @@ namespace GeekShopping.CartAPI.Controllers
         [HttpPost("checkout")]
         public async Task<ActionResult<CheckoutHeaderVO>> Checkout(CheckoutHeaderVO vo)
         {
+            string token = Request.Headers["Authorization"];
+
             if (vo?.UserId == null) return BadRequest();
             var cart = await _repository.FindCartByUserId(vo.UserId);
             if (cart == null) return NotFound();
+            if (!string.IsNullOrEmpty(vo.CouponCode))
+            {
+                CouponVO coupon = await _couponRepository.GetCoupon(
+                    vo.CouponCode, token);
+                if (vo.DiscountAmount != coupon.DiscountAmount)
+                {
+                    return StatusCode(412);
+                }
+            }
             vo.CartDetails = cart.CartDetails;
             vo.DateTime = DateTime.Now;
 
-            //RabbitMQ logic comes here!!!
+            // RabbitMQ logic comes here!!!
             _rabbitMQMessageSender.SendMessage(vo, "checkoutqueue");
 
             return Ok(vo);
