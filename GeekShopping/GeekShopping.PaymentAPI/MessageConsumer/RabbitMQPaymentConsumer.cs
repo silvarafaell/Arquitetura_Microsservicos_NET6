@@ -3,7 +3,6 @@ using GeekShopping.PaymentAPI.RabbitMQSender;
 using GeekShopping.PaymentProcessor;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
 
