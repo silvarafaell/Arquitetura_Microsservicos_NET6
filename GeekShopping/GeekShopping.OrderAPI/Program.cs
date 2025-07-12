@@ -21,6 +21,7 @@ dbContextBuilder.UseMySql(
 );
 
 builder.Services.AddSingleton(new OrderRepository(dbContextBuilder.Options));
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
 builder.Services.AddHostedService<RabbitMQCheckoutConsumer>();
 builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
