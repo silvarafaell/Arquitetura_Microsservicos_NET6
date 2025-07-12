@@ -129,4 +129,6 @@
 ### Seção 20 - Criando o Microserviço de Pedido de compras
 - dotnet ef migrations add AddOrderDatablesOnDB
 - dotnet ef database update
+
+### Seção 23 - Trabalhando com Exchanges no RabbitMQ
       
